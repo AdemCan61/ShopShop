@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} Accueil {% endblock %}
+       
+{% block content %} 
+    <div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-10">
+				<h1 class="text-center" style="color:#131313;">Panier</h1>
+				{% for panier in paniers %}
+				<li style="color : #000"><span style="display : none">{{panier.idPanier}}</span>
+                                         <span style="font-size:24px">{{panier.name}}</span>
+                <br>
+                <br>{{panier.prix}}€ 
+				</li>
+                <a href="index.php?page=panier">Supprimer du panier</a>
+                </li>
+                {% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %} 

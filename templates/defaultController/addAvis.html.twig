@@ -1,0 +1,199 @@
+{% extends "base.html.twig" %}
+    {% block title %} {{ parent() }} Ajouter un Commentaire pour le produit {% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 align-items-center">
+            <h1 class="text-center text-primary fw-bold m-2">Ajouter un Commentaire pour le produit</h1>
+                {% for product in products %}
+                <form action="" method="post">
+                    <span style="color : #000; font-size : 32px">{{product.name}}</span>
+                    <input type="text" id="NameProduct" name="NameProduct" class="form-control" placeholder="{{product.name}}" autocomplete="off"><br>
+                    <input type="text" id="Commentaire" name="Commentaire" class="form-control" placeholder="Commentaire" required><br>
+                    <input type="hidden" id="Etoile" name="Etoile" class="form-control" placeholder="0" required><br>
+                    <div class="text-center">
+                    <span style="color : #EBF400; font-size : 32px">
+                    <input type="checkbox" style="opacity : 0; position : relative; left : 30px; width : 25px; 
+                    height : 25px; cursor : pointer;" class="checkbox-1">
+                    <i class="bi bi-star" id="star-1" style="padding-right: 20px;" value="1"></i>
+                    <input type="checkbox" style="opacity : 0; position : relative; left : 30px; width : 25px; 
+                    height : 25px; cursor : pointer;" class="checkbox-2">
+                    <i class="bi bi-star" id="star-2" style="padding-right: 20px;" value="2"></i>
+                    <input type="checkbox" style="opacity : 0; position : relative; left : 30px; width : 25px; 
+                    height : 25px; cursor : pointer;" class="checkbox-3">
+                    <i class="bi bi-star" id="star-3" style="padding-right: 20px;" value="3"></i>
+                    <input type="checkbox" style="opacity : 0; position : relative; left : 30px; width : 25px; 
+                    height : 25px; cursor : pointer;" class="checkbox-4">
+                    <i class="bi bi-star" id="star-4" style="padding-right: 20px;" value="4"></i>
+                    <input type="checkbox" style="opacity : 0; position : relative; left : 30px; width : 25px; 
+                    height : 25px; cursor : pointer;" class="checkbox-5">
+                    <i class="bi bi-star" id="star-5" style="padding-right: 20px;" value="5"></i></span><br>
+                    <input type="submit" value="Ajouter" class="btn btn-primary m-2">
+                    </div>
+                </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+const checkbox1 = document.querySelector(".checkbox-1");
+const checkbox2 = document.querySelector(".checkbox-2");
+const checkbox3 = document.querySelector(".checkbox-3");
+const checkbox4 = document.querySelector(".checkbox-4");
+const checkbox5 = document.querySelector(".checkbox-5");
+const star1 = document.querySelector("#star-1");
+const star2 = document.querySelector("#star-2");
+const star3 = document.querySelector("#star-3");
+const star4 = document.querySelector("#star-4");
+const star5 = document.querySelector("#star-5");
+const Etoile = document.getElementById("Etoile");
+
+checkbox1.addEventListener("click", () =>{
+    if (star1.classList.contains("bi") && star1.classList.contains("bi-star")) {
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star-fill");
+        Etoile.placeholder = "1";
+    }else{
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star-fill");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star");
+        Etoile.placeholder = "0";
+    }
+});
+checkbox2.addEventListener("click", () =>{
+    if (star2.classList.contains("bi") && star2.classList.contains("bi-star")) {
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star-fill");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star-fill");
+    }else{
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star-fill");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star-fill");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star");
+    }
+});
+checkbox3.addEventListener("click", () =>{
+    if (star3.classList.contains("bi") && star3.classList.contains("bi-star")) {
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star-fill");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star-fill");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star-fill");
+    }else{
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star-fill");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star-fill");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star-fill");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star");
+    }
+});
+checkbox4.addEventListener("click", () =>{
+    if (star4.classList.contains("bi") && star4.classList.contains("bi-star")) {
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star-fill");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star-fill");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star-fill");
+        star4.classList.remove("bi");
+        star4.classList.remove("bi-star");
+        star4.classList.add("bi");
+        star4.classList.add("bi-star-fill");
+    }else{
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star-fill");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star-fill");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star-fill");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star");
+        star4.classList.remove("bi");
+        star4.classList.remove("bi-star-fill");
+        star4.classList.add("bi");
+        star4.classList.add("bi-star");
+    }
+});
+checkbox5.addEventListener("click", () =>{
+    if (star5.classList.contains("bi") && star5.classList.contains("bi-star")) {
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star-fill");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star-fill");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star-fill");
+        star4.classList.remove("bi");
+        star4.classList.remove("bi-star");
+        star4.classList.add("bi");
+        star4.classList.add("bi-star-fill");
+        star5.classList.remove("bi");
+        star5.classList.remove("bi-star");
+        star5.classList.add("bi");
+        star5.classList.add("bi-star-fill");
+    }else{
+        star1.classList.remove("bi");
+        star1.classList.remove("bi-star-fill");
+        star1.classList.add("bi");
+        star1.classList.add("bi-star");
+        star2.classList.remove("bi");
+        star2.classList.remove("bi-star-fill");
+        star2.classList.add("bi");
+        star2.classList.add("bi-star");
+        star3.classList.remove("bi");
+        star3.classList.remove("bi-star-fill");
+        star3.classList.add("bi");
+        star3.classList.add("bi-star");
+        star4.classList.remove("bi");
+        star4.classList.remove("bi-star-fill");
+        star4.classList.add("bi");
+        star4.classList.add("bi-star");
+        star5.classList.add("bi");
+        star5.classList.add("bi-star");
+        star5.classList.remove("bi");
+        star5.classList.remove("bi-star-fill");
+    }
+});
+    </script>
+{% endblock %}

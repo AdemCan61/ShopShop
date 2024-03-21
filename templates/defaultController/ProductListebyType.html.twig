@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} Liste de Produit par Type {% endblock %}
+       
+{% block content %} 
+    <div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-10">
+				<h1 class="text-center" style="color:#131313;">Liste de Produit par Type</h1>
+                <ul>
+                {% for product in products %}
+                {% if product.type.id == selected_type_id %}
+                <li style="color: #000">
+                    <span style="display: none">{{ product.idProduct }}</span>
+                    <span style="font-size: 24px">{{ product.name }}</span><br>
+                {{ product.description }} <br>
+                {{ product.prix }}€ <br>
+                {{ product.ProductType }}
+                <a href="index.php?page=avis">Voir les avis sur le produits</a>
+                <a href="index.php?page=login">Donner un avis pour le produit</a>       
+                <a href="index.php?page=addPanier">Ajouter {{ product.name }} dans le panier</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+			</div>
+		</div>
+	</div>
+{% endblock %} 

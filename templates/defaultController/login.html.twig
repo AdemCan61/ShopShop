@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} Accueil {% endblock %}
+       
+{% block content %} 
+<form action="index.php?page=addAvis" method="post">
+<br>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+    </div>
+    <br><br>
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off" name="password">
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
